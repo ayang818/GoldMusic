@@ -32,7 +32,7 @@ import static cn.hdu.edu.goldmusic.Common.*;
 
 public class RecommendMusicListActivity extends AppCompatActivity {
 
-    public String cookies = "_csrf=24c02e684181e4d14ba859452df27984;%20Max-Age=1296010;%20Expires=Mon,%2011%20Jan%202021%2017:38:14%20GMT;%20Path=/;;__remember_me=true;%20Max-Age=1296000;%20Expires=Mon,%2011%20Jan%202021%2017:38:04%20GMT;%20Path=/;;MUSIC_U=d3324a0cf83d7affa57c7fd81110883230f8a16475cfbcecf0bbad2a56f7145c0931c3a9fbfe3df2;%20Max-Age=1296000;%20Expires=Mon,%2011%20Jan%202021%2017:38:04%20GMT;%20Path=/;";
+    public String cookies = "";
     public ListView musicListView;
     public static ArrayList<Song> songList = new ArrayList<>();
     public static RecommendMusicListActivity vView;
@@ -57,7 +57,7 @@ public class RecommendMusicListActivity extends AppCompatActivity {
         }
 
         MyHandler handler = new MyHandler();
-        buildRequests("http://119.23.240.115:1080/login/cellphone?phone=19975260191&password=wangyiyun1004210191", handler, LOGIN);
+        buildRequests("http://119.23.240.115:1080/login/cellphone?phone=&password=", handler, LOGIN);
         // init the music list
         init();
         buildRequests("http://119.23.240.115:1080/recommend/songs?cookie=" + RecommendMusicListActivity.vView.cookies,  handler, FETCH_RECOMMEND_LIST);
